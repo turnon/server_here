@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require 'server_here'
+
+Rack::Handler::WEBrick.run ServerHere::App, :Port => 9292, :Host => ServerHere::IP
