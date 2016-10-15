@@ -15,11 +15,6 @@ module ServerHere
   
       file = FileWrapper.new path
   
-      if_mod_since = req.get_header 'HTTP_IF_MODIFIED_SINCE'
-      if if_mod_since and file.last_mod == if_mod_since
-        return [304, {}, []]
-      end
-  
       header = {
         'Content-Type' => file.content_type,
         'Last-Modified' => file.last_mod

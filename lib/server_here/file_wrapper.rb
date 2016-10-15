@@ -5,7 +5,7 @@ module ServerHere
     end
   
     def last_mod
-      @last_mod ||= File.mtime(@f).strftime '%a, %d %b %Y %T GMT'
+      @last_mod ||= File.mtime(@f).rfc2822
     end
   
     def ext
@@ -17,7 +17,7 @@ module ServerHere
     end
   
     def to_body
-      [File.read(@f)]
+      File.new(@f)
     end
   end
 end

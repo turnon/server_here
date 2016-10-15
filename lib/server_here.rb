@@ -13,6 +13,7 @@ end
 module ServerHere
   App = Rack::Builder.app {
     use Rack::ContentLength
+    use Rack::ConditionalGet
     use EnvInspector
     run Core.new
   }
