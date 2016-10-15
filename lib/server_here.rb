@@ -11,7 +11,7 @@ Dir[lib].each do |f|
 end
 
 module ServerHere
-  App = Rack::Builder.new {
+  App = Rack::Builder.app {
     use Rack::ContentLength
     use EnvInspector
     run Core.new
