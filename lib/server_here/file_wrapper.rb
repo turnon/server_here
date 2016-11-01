@@ -1,3 +1,5 @@
+require 'server_here/content_type_map'
+
 module ServerHere
   class FileWrapper
     def initialize file
@@ -13,7 +15,7 @@ module ServerHere
     end
   
     def content_type
-      'text/' + (%w{html css}.include?(ext) ? ext : 'plain')
+      ContentTypeMap[ext] || 'text/plain'
     end
   
     def to_body
