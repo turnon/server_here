@@ -15,6 +15,7 @@ module ServerHere
     use Rack::ContentLength
     use Rack::ConditionalGet
     use EnvInspector
+    use Ls
     run Core.new
   }
 end
