@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-server_here
+    $ server_here
 
 ## License
 
